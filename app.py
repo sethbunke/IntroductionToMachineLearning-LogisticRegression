@@ -37,4 +37,11 @@ X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X, Y, test_
 model = LogisticRegression()
 model.fit(X_train, Y_train)
 
+#Test model
+predicted = model.predict(X_test)
+matrix = confusion_matrix(Y_test, predicted)
+pd.DataFrame(matrix, index=['0 (Actual)', '1 (Actual)'], columns=['0 (Predicted)', '1 (Predicted)'])
+
+#########################################
+#Read file to classify
 
